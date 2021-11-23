@@ -28,7 +28,6 @@
         <option>BU Emploi</option>
         <option>BU Habitat</option>
         <option>BU Immo</option>
-        <option>BU Maville</option>
         <option>BU Obsèques</option>
         <option>BU Services & Collectivités</option>
         <option>BU télévente</option>
