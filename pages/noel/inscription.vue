@@ -7,19 +7,23 @@
                 …Enfin ceux qui veulent participer !!! ​
             </p>
             ​<p>
-                Cette année Happitime organise un arbre de Noël Additi.​<br/>
+                Cette année Happitime organise un arbre de Noël Additi *​<br/>
                 Serez-vous nombreux à vous prendre au jeu de la recherche des hobbies ​<br/>
                 et des goûts de vos collègues pour leur offrir un cadeau personnalisé qui leur fera plaisir ?​
             </p>
  ​           <p>
                     Règles du jeu : ​<br/>
-                1 – Inscription ci dessous avant le mardi 30 novembre 2021 ​<br/>
-                2 – Découvrez le nom de votre collègue à qui vous allez offrir un cadeau à partir du 1er décembre 2021​<br/>
-                3 - Trouvez LE cadeau personnalisé (budget maximum : 10€) ​<br/>
-                4 – Déposez vos cadeaux dans la hotte du père Noël avant le 16 décembre 2021 ​<br/>
-                5 – Rendez vous le vendredi 17 décembre à 10h00 dans le sapin​<br/>
+                1 – Inscription ci-dessous avant le mardi 30 novembre 2021 ​<br/>
+                2 – Découvrez le nom de votre collègue à qui vous allez offrir un cadeau le 1er décembre 2021 (tirage au sort**)<br/>
+                3 - Trouvez LE cadeau personnalisé (budget maximum : 10€) <br/>
+                4 – Déposez vos cadeaux dans la hotte du père Noël les 15 et 16 décembre 2021<br/>
+                5 – Rendez-vous le vendredi 17 décembre à 10h00 pour l'ouverture des cadeaux<br/>
             </p>
-
+            <em>
+                *Que vous soyez au siège ou en agence, vous êtes tous conviés.<br/>
+                **Tirage au sort organisé par agence ou en BU voisines au siège Rennais.<br/> 
+                Vous pourrez offrir un cadeau à un collègue de votre BU ou à un collègue de la BU juste à côté
+            </em>
         </div>
 
         <Inscription />
@@ -45,6 +49,10 @@ export default {
     background: #2a4a59;
     color: #fff;
     padding: 3rem 0;
+}
+
+em {
+    font-size: 0.7rem;
 }
 </style>
 
