@@ -31,7 +31,6 @@
         <option>BU Obsèques</option>
         <option>BU Services & Collectivités</option>
         <option>BU télévente</option>
-        <option>Caen</option>
         <option>DAF</option>
         <option>DEMO FM</option>
         <option>Direction Générale</option>
