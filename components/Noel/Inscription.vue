@@ -31,7 +31,9 @@
         <option>BU Obsèques</option>
         <option>BU Services & Collectivités</option>
         <option>BU télévente</option>
+        <option>COCKTAIL FM</option>
         <option>DAF</option>
+        <option>Dans nos coeurs</option>
         <option>DEMO FM</option>
         <option>Direction Générale</option>
         <option>DRH</option>
@@ -42,13 +44,13 @@
         <option>MEDIALEX</option>
         <option>Monétisation numérique</option>
         <option>Océane Questember</option>
+        <option>Octea</option>
         <option>Pole projets et méthodes</option>
         <option>Precontact</option>
         <option>Radio Hit West</option>
         <option>Service informatique</option>
         <option>Skillapp</option>
         <option>Studio/ Pole technique</option>
-        <option>COCKTAIL FM</option>
       </select>
       </section>
       <section>
@@ -114,6 +116,7 @@
         <option>SAINT OMER</option>
         <option>SAINT QUENTIN</option>
         <option>SAUMUR</option>
+        <option>SAUVETERRE-DE-BEARN</option>
         <option>ST HERBLAIN</option>
         <option>ST MALO (av. J. Jaures)</option>
         <option>ST MALO (bd des Talards)</option>
