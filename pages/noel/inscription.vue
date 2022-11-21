@@ -15,7 +15,7 @@
             </p>
  ​           <p>
                     Règles du jeu : ​<br/>
-                1 – Inscription ci-dessous jusqu'au <b>mercredi 30 novembre 2021</b>​<br/>
+                1 – Inscription ci-dessous jusqu'au <b>mercredi 30 novembre 2022</b>​<br/>
                 2 – Le <b>1er décembre 2022</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
                 3 - Trouvez <b>LE</b> cadeau personnalisé (budget maximum : 10€) <br/>
                 4 – Déposez vos cadeaux dans la hotte du père Noël les <b>14 et 15 décembre 2022</b><br/>
