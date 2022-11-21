@@ -7,7 +7,7 @@
                 …Enfin ceux qui veulent participer !!! ​
             </p>
             ​<p>
-                Cette année Happitime organise un arbre de Noël Additi *​
+                Cette année encore, Happitime organise un arbre de Noël Additi *​
             </p>
             <p>
                 Serez-vous nombreux à vous prendre au jeu de la recherche des hobbies ​<br/>
@@ -15,11 +15,11 @@
             </p>
  ​           <p>
                     Règles du jeu : ​<br/>
-                1 – Inscription ci-dessous jusqu'au <b>mardi 30 novembre 2021</b>​<br/>
-                2 – Le <b>1er décembre 2021</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
+                1 – Inscription ci-dessous jusqu'au <b>mercredi 30 novembre 2021</b>​<br/>
+                2 – Le <b>1er décembre 2022</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
                 3 - Trouvez <b>LE</b> cadeau personnalisé (budget maximum : 10€) <br/>
-                4 – Déposez vos cadeaux dans la hotte du père Noël les <b>15 et 16 décembre 2021</b><br/>
-                5 – Rendez-vous le <b>vendredi 17 décembre à 10h00</b> pour l'ouverture des cadeaux<br/>
+                4 – Déposez vos cadeaux dans la hotte du père Noël les <b>14 et 15 décembre 2022</b><br/>
+                5 – Rendez-vous le <b>vendredi 16 décembre à 10h00</b> pour l'ouverture des cadeaux<br/>
             </p>
             <em>
                 *Que vous soyez au siège ou en agence, vous êtes tous conviés.<br/>
