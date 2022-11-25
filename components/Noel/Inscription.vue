@@ -34,17 +34,20 @@
         <option>COCKTAIL FM</option>
         <option>DAF</option>
         <option>Dans nos coeurs</option>
+        <option>Data OF</option>
         <option>DEMO FM</option>
         <option>Direction Générale</option>
         <option>DRH</option>
         <option>DSI</option>
         <option>Europe Régie Ouest</option>
+        <option>France Live</option>
         <option>IST Lannion</option>
         <option>Marketing transverse</option>
         <option>MEDIALEX</option>
         <option>Monétisation numérique</option>
         <option>Océane Questember</option>
         <option>Octea</option>
+        <option>Pole événement</option>
         <option>Pole projets et méthodes</option>
         <option>Precontact</option>
         <option>Radio Hit West</option>
