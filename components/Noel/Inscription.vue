@@ -41,7 +41,6 @@
         <option>DSI</option>
         <option>Europe Régie Ouest</option>
         <option>France Live</option>
-        <option>IST Lannion</option>
         <option>Marketing transverse</option>
         <option>MEDIALEX</option>
         <option>Monétisation numérique</option>
