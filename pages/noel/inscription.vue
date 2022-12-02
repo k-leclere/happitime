@@ -26,9 +26,13 @@
                 **Tirage au sort organisé par agence ou en BU voisines au siège Rennais.<br/> 
                 Vous pourrez offrir un cadeau à un collègue de votre BU ou à un collègue de la BU juste à côté
             </em>
+            <p>
+                <br/><br/>
+                <b>Les inscriptions sont désormais closes. Rendez-vous l'année prochaine ;-)</b>
+            </p>
         </div>
 
-        <Inscription />
+        <!-- <Inscription /> -->
     </div>
 </template>
 
