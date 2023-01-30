@@ -65,7 +65,16 @@ export default {
             console.log('ERREUR', error)
           }
         }
-      }
+      },
+      
+      async setCompteur() {
+        const { data } = await this.$supabase
+          .rpc('nb_inscrits_games');
+
+          if(data) {
+            this.compteur = data;
+          }
+        }
     },
     computed: {
       isFull() {
@@ -90,17 +99,6 @@ export default {
             agence: '',
             compteur: 0,
         };
-    },
-    methods: {
-
-      async setCompteur() {
-        const { data } = await this.$supabase
-          .rpc('nb_inscrits_games');
-
-          if(data) {
-            this.compteur = data;
-          }
-        }
     },
     async mounted() {
       this.setCompteur();
