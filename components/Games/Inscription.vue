@@ -49,12 +49,7 @@ export default {
     methods: {
       async inscription() {
         
-        const { data } = await this.$supabase
-        .rpc('nb_inscrits');
-
-        if(data) {
-          this.compteur = data;
-        }
+        this.setCompteur();
 
         if(this.isFull) {
           const { data, error } = await this.$supabase
@@ -96,13 +91,19 @@ export default {
             compteur: 0,
         };
     },
-    async mounted() {
-      const { data } = await this.$supabase
-        .rpc('nb_inscrits');
+    methods: {
 
-        if(data) {
-          this.compteur = data;
+      async setCompteur() {
+        const { data } = await this.$supabase
+          .rpc('nb_inscrits_games');
+
+          if(data) {
+            this.compteur = data;
+          }
         }
+    },
+    async mounted() {
+      this.setCompteur();
     }
 };
 </script>
@@ -140,5 +141,6 @@ input[type=submit] {
 }
 .radio > * {
   display: inline-block;
+  width: 30px;
 }
 </style>
