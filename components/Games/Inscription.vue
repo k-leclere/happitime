@@ -20,13 +20,17 @@
       </section>
       <section>
         <label>Pouvez-vous apporter des jeux ?</label>
-        <input type="radio" name="jeux" value="1">Oui</input>
-        <input type="radio" name="jeux" value="0">Non</input>    
+        <div class="radio">
+          <input type="radio" name="jeux" value="1" />Oui
+          <input type="radio" name="jeux" value="0" />Non
+        </div>
       </section>
       <section>
-      <label>Souhaitez-vous être Game Master ?</label>
-        <input type="radio" name="master" value="1">Oui</input>
-        <input type="radio" name="master" value="0">Non</input>
+        <label>Souhaitez-vous être Game Master ?</label>
+        <div class="radio">
+          <input type="radio" name="master" value="1" />Oui
+          <input type="radio" name="master" value="0" />Non
+        </div>
       </section>
       <input type="submit" value="S'inscrire"/>
     <h3 v-if="compteur>0">Déjà {{compteur}} inscrits.</h3>
@@ -45,19 +49,42 @@ export default {
     methods: {
       async inscription() {
         
-        const { data, error } = await this.$supabase
-          .from('noel')
-          .insert([
-            { nom: this.nom, prenom: this.prenom, jeux: this.jeux, master: this.master },
-          ]);
-        
-        if(!error) {
-          this.isSuscribed = true;
+        const { data } = await this.$supabase
+        .rpc('nb_inscrits');
+
+        if(data) {
+          this.compteur = data;
         }
-        else {
-          console.log('ERREUR', error)
+
+        if(this.isFull) {
+          const { data, error } = await this.$supabase
+            .from('games')
+            .insert([
+              { nom: this.nom, prenom: this.prenom, jeux: this.jeux, master: this.master },
+            ]);
+          
+          if(!error) {
+            this.isSuscribed = true;
+          }
+          else {
+            console.log('ERREUR', error)
+          }
         }
       }
+    },
+    computed: {
+      isFull() {
+        return this.nbMax && this.compteur<this.nbMax;
+      }
+    },
+    props: {
+        /**
+         * Détermine le nb max participants
+         */
+        nbMax: {
+            type: Number,
+            default: 0,
+        },
     },
     data() {
         return {
@@ -110,5 +137,8 @@ input[type=submit] {
   border-radius: 3px;
   transition: all .4s;
   width: 120px;
+}
+.radio > * {
+  display: inline-block;
 }
 </style>

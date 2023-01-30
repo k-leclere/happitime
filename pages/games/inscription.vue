@@ -10,11 +10,11 @@
                 plusieurs tables et game masters vous accueillerons afin de vous faire partager leur passion du jeu.
             </p>
             ​<p>
-                Attention les places sont limités à 73 participants. 
+                Attention les places sont limités à {{nbMax}} participants. 
             </p>
         </div>
 
-        <inscription />
+        <inscription :nb-max="nbMax"/>
     </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
     layout: 'default',
     components: {
         Inscription,
+    },
+    data() {
+        return {
+            nbMax: 80,
+        };
     },
 };
 </script>
