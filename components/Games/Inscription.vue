@@ -143,4 +143,7 @@ input[type=submit] {
   display: inline-block;
   width: 30px;
 }
+section {
+  padding: 10px 0;
+}
 </style>
