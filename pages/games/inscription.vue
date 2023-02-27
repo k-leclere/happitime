@@ -6,8 +6,8 @@
                 Le 30 mars 2023, Happitime organise les 1er Additi Games de 18h à 20h.
             </p>
             <p>
-                L'objectif est de s'amuser autours de jeux de société, 
-                plusieurs tables et game masters vous accueillerons afin de vous faire partager leur passion du jeu.
+                L'objectif est de s'amuser autour de jeux de société, 
+                plusieurs tables et game masters vous accueilleront afin de vous faire partager leur passion du jeu.
             </p>
             ​<p>
                 Attention les places sont limitées à {{nbMax}} participants. 
