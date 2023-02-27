@@ -2,6 +2,10 @@
 <template>
   <div class="inscription">
     <form v-if="!isSuscribed" @submit.prevent="inscription()">
+      <div v-if="isFull">
+        L'événement est complet, mais inscrivez-vous ! Nous vous contacterons en cas de désistement.
+      </div>
+      
       <section>
         <label>Votre nom <span>*</span></label>
         <input 
