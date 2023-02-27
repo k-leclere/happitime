@@ -10,7 +10,7 @@
                 plusieurs tables et game masters vous accueillerons afin de vous faire partager leur passion du jeu.
             </p>
             ​<p>
-                Attention les places sont limités à {{nbMax}} participants. 
+                Attention les places sont limitées à {{nbMax}} participants. 
             </p>
         </div>
 
