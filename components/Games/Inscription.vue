@@ -3,7 +3,8 @@
   <div class="inscription">
     <form v-if="!isSuscribed" @submit.prevent="inscription()">
       <div v-if="isFull">
-        L'événement est complet, mais inscrivez-vous ! Nous vous contacterons en cas de désistement.
+        <b>L'événement est complet, mais inscrivez-vous !<br />
+        Nous vous contacterons en cas de désistement.</b>
       </div>
       
       <section>
@@ -55,7 +56,7 @@ export default {
         
         this.setCompteur();
 
-        if(this.isFull) {
+        if(! this.isFull) {
           const { data, error } = await this.$supabase
             .from('games')
             .insert([
@@ -82,7 +83,7 @@ export default {
     },
     computed: {
       isFull() {
-        return this.nbMax && this.compteur<this.nbMax;
+        return this.nbMax && this.compteur>=this.nbMax;
       }
     },
     props: {
