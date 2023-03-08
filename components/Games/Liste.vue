@@ -2,7 +2,11 @@
 <template>
   <div class="liste">
     <ul>
-      <li v-for="game in games">{{ game.nom }} {{ game.prenom }} {{ (game.jeux ? 'apporte des jeux': 'n\'a pas de jeux') }} {{ (game.master ? 'est game master': 'pas game master') }}</li>
+      <li 
+        v-for="game in games"
+        :key="game.id">
+        {{ game.nom }} {{ game.prenom }} {{ (game.jeux ? 'apporte des jeux': 'n\'a pas de jeux') }} {{ (game.master ? 'est game master': 'pas game master') }}
+      </li>
     </ul>
   </div>
 </template>
