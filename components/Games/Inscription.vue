@@ -26,15 +26,15 @@
       <section>
         <label>Pouvez-vous apporter des jeux ?</label>
         <div class="radio">
-          <input type="radio" v-model="jeux" value="1" />Oui
-          <input type="radio" v-model="jeux" value="0" />Non
+          <input type="radio" v-model="jeux" name="jeux" value="1" />Oui
+          <input type="radio" v-model="jeux" name="jeux" value="0" />Non
         </div>
       </section>
       <section>
         <label>Souhaitez-vous être Game Master ?</label>
         <div class="radio">
-          <input type="radio" v-model="master" value="1" />Oui
-          <input type="radio" v-model="master" value="0" />Non
+          <input type="radio" v-model="master" name="master" value="1" />Oui
+          <input type="radio" v-model="master" name="master" value="0" />Non
         </div>
       </section>
       <input type="submit" value="S'inscrire"/>
