@@ -126,6 +126,7 @@ export default {
     data() {
         return {
             isSuscribed: false,
+            nom: '',
             capitaine: '',
             equipier1: '',
             equipier2: '',
