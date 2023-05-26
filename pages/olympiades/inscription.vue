@@ -3,7 +3,7 @@
         <div class="entete">
             <h1>Inscription aux Olympiades d'Additi</h1>
             <p>
-                Le 29 mai 2023, auront lieu les Olympiades Additi.
+                Le 29 juin 2023, auront lieu les Olympiades Additi.
             </p>
             <p>
                 L'objectif est de s'amuser et de participer à de petites épreuves en équipe. <br/>
