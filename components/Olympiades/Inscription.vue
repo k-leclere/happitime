@@ -4,6 +4,14 @@
     <form v-if="!isSuscribed" @submit.prevent="inscription()">
       
       <section>
+        <label>Nom d'équipe <span>*</span></label>
+        <input 
+          v-model="nom"
+          type="text"
+          required
+        />
+      </section>
+      <section>
         <label>Capitaine d'équipe <span>*</span></label>
         <input 
           v-model="capitaine"
@@ -95,7 +103,7 @@ export default {
         const { data, error } = await this.$supabase
           .from('olympiades')
           .insert([
-            { capitaine: this.capitaine, equipier1: this.equipier1, equipier2: this.equipier2, equipier3: this.equipier3, equipier4: this.equipier4, equipier5: this.equipier5, equipier6: this.equipier6, equipier7: this.equipier7 },
+            { nom: this.nom, capitaine: this.capitaine, equipier1: this.equipier1, equipier2: this.equipier2, equipier3: this.equipier3, equipier4: this.equipier4, equipier5: this.equipier5, equipier6: this.equipier6, equipier7: this.equipier7 },
           ]);
         
         if(!error) {
