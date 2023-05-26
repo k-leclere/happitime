@@ -6,7 +6,7 @@
                 Le 29 mai 2023, auront lieu les Olympiades Additi.
             </p>
             <p>
-                L'objectif est de s'amuser et de participer à de petites épreuves en équipes. <br/>
+                L'objectif est de s'amuser et de participer à de petites épreuves en équipe. <br/>
                 De la réflexion, de la logique et un peu de muscle, composez votre équipe afin d'affronter d'autres équipes dans la bonne humeur.
             </p>
         </div>

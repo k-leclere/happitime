@@ -7,7 +7,7 @@
         <label>Capitaine d'équipe <span>*</span></label>
         <input 
           v-model="capitaine"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
           type="text"
           required
         />
@@ -16,7 +16,7 @@
       <label>Equipier n°1 <span>*</span></label>
       <input 
         v-model="equipier1"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
         required
       />
@@ -25,7 +25,7 @@
       <label>Equipier n°2 <span>*</span></label>
       <input 
         v-model="equipier2"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
         required
       />
@@ -34,7 +34,7 @@
       <label>Equipier n°3 <span>*</span></label>
       <input 
         v-model="equipier3"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
         required
       />
@@ -43,7 +43,7 @@
       <label>Equipier n°4 <span>*</span></label>
       <input 
         v-model="equipier4"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
         required
       />
@@ -52,7 +52,7 @@
       <label>Equipier n°5 <span>*</span></label>
       <input 
         v-model="equipier5"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
         required
       />
@@ -61,7 +61,7 @@
       <label>Equipier n°6</label>
       <input 
         v-model="equipier6"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
       />
       </section>
@@ -69,7 +69,7 @@
       <label>Equipier n°7</label>
       <input 
         v-model="equipier7"
-          placeholder="Nom prénom"
+          placeholder="Nom Prénom"
         type="text"
       />
       </section>
