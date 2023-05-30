@@ -82,7 +82,7 @@
       />
       </section>
       <input type="submit" value="S'inscrire"/>
-    <h3 v-if="compteur>5">Déjà {{compteur}} équipes.</h3>
+      <h3 v-if="compteur>0">Déjà {{compteur}} équipes.</h3>
 
     </form>
     <div v-else>
