@@ -27,7 +27,7 @@ export default {
     },
     data() {
         return {
-            nbMax: 24,
+            nbMax: 21,
         };
     },
 };
