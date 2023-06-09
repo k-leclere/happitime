@@ -11,7 +11,7 @@
             </p>
         </div>
 
-        <inscription/>
+        <inscription :nb-max="nbMax"/>
     </div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
     layout: 'default',
     components: {
         Inscription,
+    },
+    data() {
+        return {
+            nbMax: 24,
+        };
     },
 };
 </script>
