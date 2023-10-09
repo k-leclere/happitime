@@ -26,16 +26,16 @@
       <section>
         <label>Participer au tournoi ?</label>
         <div class="radio">
-          <input type="radio" v-model="jeux" name="tournoi" value="fifa" /> Fifa
-          <input type="radio" v-model="jeux" name="tournoi" value="mario-kart" /> Mario Kart
-          <input type="radio" v-model="jeux" name="tournoi" value="non" />Je veux jouer aux autres jeux
+          <input type="radio" v-model="tournoi" name="tournoi" value="fifa" /> Fifa
+          <input type="radio" v-model="tournoi" name="tournoi" value="mario-kart" /> Mario Kart
+          <input type="radio" v-model="tournoi" name="tournoi" value="non" />Je veux jouer aux autres jeux
         </div>
       </section>
       <section>
         <label>Pouvez-vous apporter une console ?</label>
         <div class="radio">
-          <input type="radio" v-model="master" name="pret" value="1" />Oui
-          <input type="radio" v-model="master" name="pret" value="0" />Non
+          <input type="radio" v-model="pret" name="pret" value="1" />Oui
+          <input type="radio" v-model="pret" name="pret" value="0" />Non
         </div>
       </section>
       <input type="submit" value="S'inscrire"/>
