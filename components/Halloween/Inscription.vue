@@ -58,7 +58,7 @@ export default {
 
         if(! this.isFull) {
           const { data, error } = await this.$supabase
-            .from('games')
+            .from('halloween')
             .insert([
               { nom: this.nom, prenom: this.prenom, killer: this.killer, film: this.film },
             ]);
