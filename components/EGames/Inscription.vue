@@ -26,9 +26,9 @@
       <section>
         <label>Participer au tournoi ?</label>
         <div class="radio">
-          <input type="radio" v-model="jeux" name="tournoi" value="fifa" />Fifa
-          <input type="radio" v-model="jeux" name="tournoi" value="mario-kart" />Mario Kart
-          <input type="radio" v-model="jeux" name="tournoi" value="non" />je ne participe pas au tournoi mais je viens jouer aux autres jeux
+          <input type="radio" v-model="jeux" name="tournoi" value="fifa" /> Fifa
+          <input type="radio" v-model="jeux" name="tournoi" value="mario-kart" /> Mario Kart
+          <input type="radio" v-model="jeux" name="tournoi" value="non" />Je ne participe pas aux tournois
         </div>
       </section>
       <section>
