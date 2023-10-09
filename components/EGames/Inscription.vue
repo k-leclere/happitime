@@ -75,7 +75,7 @@ export default {
 
       async setCompteur() {
         const { data } = await this.$supabase
-          .rpc('nb_inscrits_games');
+          .rpc('nb_inscrits_egames');
 
           if(data) {
             this.compteur = data;
