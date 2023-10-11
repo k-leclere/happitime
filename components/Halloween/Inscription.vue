@@ -24,17 +24,33 @@
       />
       </section>
       <section>
+        <label>Participer à la soirée ciné ?</label>
+        <div class="radio">
+          <input type="radio" v-model="film" name="film" value="1" />Oui
+          <input type="radio" v-model="film" name="film" value="0" />Non
+        </div>
+      </section>
+      <section>
         <label>Participer à la killer party ?</label>
+        <p>La participation à la Killer Party
+        requiert 3 conditions :
+          <ul>
+          <li> être présent sur la période de 
+          chasse (présentiel ou télétravail)</li>
+          <li>être de bonne foi</li>
+          <li>n'avoir aucun scrupule</li>
+          </ul>
+        </p>
         <div class="radio">
           <input type="radio" v-model="killer" name="killer" value="1" />Oui
           <input type="radio" v-model="killer" name="killer" value="0" />Non
         </div>
       </section>
       <section>
-        <label>Participer à la soirée ciné ?</label>
+        <label>Intéressé.e par l’atelier origami ?</label>
         <div class="radio">
-          <input type="radio" v-model="film" name="film" value="1" />Oui
-          <input type="radio" v-model="film" name="film" value="0" />Non
+          <input type="radio" v-model="origami" name="origami" value="1" />Oui
+          <input type="radio" v-model="origami" name="origami" value="0" />Non
         </div>
       </section>
       <input type="submit" value="S'inscrire"/>
@@ -60,7 +76,7 @@ export default {
           const { data, error } = await this.$supabase
             .from('halloween')
             .insert([
-              { nom: this.nom, prenom: this.prenom, killer: this.killer, film: this.film },
+              { nom: this.nom, prenom: this.prenom, killer: this.killer, film: this.film, origami: this.origami },
             ]);
           
           if(!error) {
@@ -100,8 +116,9 @@ export default {
             isSuscribed: false,
             nom: '',
             prenom: '',
-            service: '',
-            agence: '',
+            killer: '',
+            film: '',
+            origami: '',
             compteur: 0,
         };
     },
@@ -148,5 +165,18 @@ input[type=submit] {
 }
 section {
   padding: 10px 0;
+}
+section > p{
+  font-size: small;
+}
+section ul{  
+  width: 350px;
+  position: relative;
+  text-align: left;
+  left: 40%;
+  font-size: small;
+}
+section li{
+  list-style-position: inside;
 }
 </style>

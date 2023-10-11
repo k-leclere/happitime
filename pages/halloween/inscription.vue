@@ -3,7 +3,13 @@
         <div class="entete">
             <h1>Inscription Halloween Party</h1>
             ​<p>
-                Venez participer à nos événements Halloween !
+                Du lundi 23 au mardi 31 octobre,
+            venez participer à nos différents
+            événements Halloween !
+            </p>
+            ​<p>
+            Des questions ? L'équipe Happitime
+            est là pour vous répondre !
             </p>
         </div>
 

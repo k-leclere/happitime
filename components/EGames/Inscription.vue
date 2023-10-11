@@ -32,7 +32,7 @@
         </div>
       </section>
       <section>
-        <label>Pouvez-vous apporter une console ?</label>
+        <label>Pouvez-vous apporter une console (PS5, switch) ?</label>
         <div class="radio">
           <input type="radio" v-model="pret" name="pret" value="1" />Oui
           <input type="radio" v-model="pret" name="pret" value="0" />Non
