@@ -54,9 +54,9 @@
         </div>
       </section>
       <input type="submit" value="S'inscrire"/>
-    <h3 v-if="compteur>0">{{compteur_cine}} inscrits pour la soirée ciné.</h3>
-    <h3 v-if="compteur>0">{{compteur_killer}} inscrits pour la Killer Party.</h3>
-    <h3 v-if="compteur>0">{{compteur_origami}} inscrits pour l’atelier origami.</h3>
+    <h3 v-if="compteur_cine>0">{{compteur_cine}} inscrits pour la soirée ciné.</h3>
+    <h3 v-if="compteur_killer>0">{{compteur_killer}} inscrits pour la Killer Party.</h3>
+    <h3 v-if="compteur_origami>0">{{compteur_origami}} inscrits pour l’atelier origami.</h3>
 
     </form>
     <div v-else>
