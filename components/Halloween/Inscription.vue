@@ -24,7 +24,7 @@
       />
       </section>
       <section>
-        <label>Participer à la soirée ciné ?</label>
+        <label>Participer à la soirée ciné (le 30/10 à 18h45)?</label>
         <div class="radio">
           <input type="radio" v-model="film" name="film" value="1" />Oui
           <input type="radio" v-model="film" name="film" value="0" />Non
