@@ -31,7 +31,7 @@
         </div>
       </section>
       <section>
-        <label>Participer à la killer party ?</label>
+        <label>Participer à la Killer Party ?</label>
         <p>La participation à la Killer Party
         requiert 3 conditions :
           <ul>
@@ -54,7 +54,9 @@
         </div>
       </section>
       <input type="submit" value="S'inscrire"/>
-    <h3 v-if="compteur>0">Déjà {{compteur}} inscrits.</h3>
+    <h3 v-if="compteur>0">{{compteur_cine}} inscrits pour la soirée ciné.</h3>
+    <h3 v-if="compteur>0">{{compteur_killer}} inscrits pour la Killer Party.</h3>
+    <h3 v-if="compteur>0">{{compteur_origami}} inscrits pour l’atelier origami.</h3>
 
     </form>
     <div v-else>
@@ -89,17 +91,29 @@ export default {
       },
 
       async setCompteur() {
-        const { data } = await this.$supabase
-          .rpc('nb_inscrits_halloween');
 
-          if(data) {
-            this.compteur = data;
-          }
-        }
+        
+
+        const fetchCine = this.$supabase.rpc('nb_inscrits_halloween_cine').then(({ data }) => {
+            this.compteur_cine = data;
+        });
+        const fetchKiller = this.$supabase.rpc('nb_inscrits_halloween_killer').then(({ data }) => {
+            this.compteur_killer = data;
+        });
+        const fetchOrigami = this.$supabase.rpc('nb_inscrits_halloween_origami').then(({ data }) => {
+            this.compteur_origami = data;
+        });
+
+        await Promise.allSettled([
+            fetchCine,
+            fetchKiller,
+            fetchOrigami,
+        ]);
+      }
     },
     computed: {
       isFull() {
-        return this.nbMax && this.compteur>=this.nbMax;
+        return this.nbMax && this.compteur_cine>=this.nbMax;
       }
     },
     props: {
@@ -119,7 +133,9 @@ export default {
             killer: '',
             film: '',
             origami: '',
-            compteur: 0,
+            compteur_cine: 0,
+            compteur_killer: 0,
+            compteur_origami: 0,
         };
     },
     async mounted() {
