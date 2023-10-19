@@ -149,6 +149,13 @@ if ($killedResponse !== false) {
             l('ERREUR KILLER NON TROUVE');
         }
 
+
+        if($killer->cible!=$kill->nom) {
+            $sujet = 'Bravo vous avez découvert votre tueur !';
+            $message = 'Votre cible reste la même : <b>'.$killer->cible.'</b>.<br/>Faites attention un nouveau tueur est à vos trousses !';
+            mailing($killer->email, $sujet, $message);
+        }
+
         foreach($newCibleFor as $cibleToChange) {
 
             if(!empty($ciblesDispo)) {
@@ -166,12 +173,6 @@ if ($killedResponse !== false) {
 
             $cibleToChange->cible = $cible->nom;
             majPlayer($cibleToChange);
-        }
-
-        if($killer->cible!=$kill->nom) {
-            $sujet = 'Bravo vous avez découvert votre tueur !';
-            $message = 'Votre cible reste la même : <b>'.$killer->cible.'</b>.<br/>Faites attention un nouveau tueur est à vos trousses !';
-            mailing($killer->email, $sujet, $message);
         }
     }
 } else {
