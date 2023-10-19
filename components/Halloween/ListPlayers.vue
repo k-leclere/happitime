@@ -4,6 +4,7 @@
       <thead>
         <tr>
           <th>Nom</th>
+          <th>Compteur</th>
           <th>Email</th>
           <th>Mission</th>
           <th>Cible</th>
@@ -12,8 +13,11 @@
       </thead>
       <tbody>
         <tr v-for="player in players" :key="player.id" :class="{ killed: player.killed_at }">
-          <td :class="{ killed: player.killed_at }">
+          <td>
             <input v-model="player.nom" @input="edite(player)"/>
+          </td>
+          <td>
+            {{ player.cpt }}
           </td>
           <td>
             <input v-model="player.email" @input="edite(player)"/>
@@ -42,10 +46,11 @@
     <div class="modal" v-if="showModal">
       <div class="modal-content">
         <h3>Confirmer le meurtre</h3>
-        <label for="killer">Qui a tué le joueur ?</label>
+        <label for="killer">Qui a tué {{ currentPlayer.nom }} ?</label>
         <select v-model="selectedKiller" id="killer">
           <option v-for="p in potentialKillers" :key="p.id">{{ p.nom }}</option>
         </select>
+        <button @click="showModal = false">Annuler</button>
         <button @click="executeKill">Confirmer</button>
       </div>
     </div>
@@ -63,9 +68,9 @@ export default {
     async loadPlayers() {
       // Utilisez le module Supabase pour récupérer les données depuis la table "killerparty"
       const { data, error } = await this.$supabase.from('killerparty')
-        .select('id, nom, email, mission, cible, cpt, killed_at')
+        .select('id, nom, email, mission, cible, cpt, killed_at, killed_by')
         .order('killed_at', { nullsFirst: true })
-        .order('id');
+        .order('nom');
   
       if (error) {
         console.error('Erreur lors de la récupération des données de killerparty', error);
@@ -98,7 +103,7 @@ export default {
             ...killer,
             cpt: killer.cpt+this.currentPlayer.cpt+1
           };
-          console.log(updatedKiller);
+          
           const { dataKiller, errorKiller } = await this.$supabase.from("killerparty").upsert([updatedKiller]);
 
           const updatedPlayer = {
@@ -117,13 +122,23 @@ export default {
       }
     },
     async ressuscite(player) {
+      const killer = this.players.find((p) => p.nom === player.killed_by);
+      const updatedKiller = {
+            ...killer,
+            cpt: killer.cpt-player.cpt-1
+          };
+          
+      const { dataKiller, errorKiller } = await this.$supabase.from("killerparty").upsert([updatedKiller]);
+
+
       const updatedPlayer = {
           ...player,
           killed_at: null,
           killed_by: null,
         };
-        const { dataPlayer, errorPlayer } = await this.$supabase.from("killerparty").upsert([updatedPlayer]);
-      if (errorPlayer) {
+      const { dataPlayer, errorPlayer } = await this.$supabase.from("killerparty").upsert([updatedPlayer]);
+      
+      if (errorPlayer || errorKiller) {
         console.error("Erreur lors de la mise à jour du joueur : ", error);
       }
       this.loadPlayers();
