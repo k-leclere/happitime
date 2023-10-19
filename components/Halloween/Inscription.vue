@@ -30,7 +30,7 @@
           <input type="radio" v-model="film" name="film" value="0" />Non
         </div>
       </section>
-      <section>
+      <!-- <section>
         <label>Participer à la Killer Party ?</label>
         <p>La participation à la Killer Party
         requiert 3 conditions :
@@ -45,7 +45,7 @@
           <input type="radio" v-model="killer" name="killer" value="1" />Oui
           <input type="radio" v-model="killer" name="killer" value="0" />Non
         </div>
-      </section>
+      </section> -->
       <section>
         <label>Intéressé.e par l’atelier origami ?</label>
         <div class="radio">
@@ -130,7 +130,7 @@ export default {
             isSuscribed: false,
             nom: '',
             prenom: '',
-            killer: '',
+            killer: 0,
             film: '',
             origami: '',
             compteur_cine: 0,
