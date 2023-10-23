@@ -27,16 +27,16 @@
           </td>
           <td v-if="!player.killed_at">
             <select v-model="player.cible" @input="edite(player)">
-              <option v-for="p in [...playersDispo, { nom: player.cible }]" 
-                :key="p.id" 
-                :value="p.nom"
+              <option v-for="p in [...playersDispo, { nom: player.cible }]" :key="p.id" :value="p.nom"
                 v-if="p.nom !== player.nom">
                 {{ p.nom }}
               </option>
             </select>
           </td>
           <td v-else>
-            🎯 {{ player.cible }}<br/>🔪 {{ player.killed_by }}
+            🎯 {{ player.cible }}<br />
+            🔪 {{ player.killed_by }}<br />
+            📅 {{ formaterDate(player.killed_at) }}
           </td>
           <td>
             <template v-if="!player.killed_at">
@@ -92,7 +92,7 @@ export default {
         console.error("Erreur lors de la mise à jour du joueur : ", error);
       }
     },
-    async confirmKill(player) {
+    confirmKill(player) {
       this.potentialKillers = this.players.filter(
         (p) => (p.cible === player.nom && !p.killed_at) || p.nom === player.cible
       );
@@ -148,6 +148,21 @@ export default {
         console.error("Erreur lors de la mise à jour du joueur : ", error);
       }
       this.loadPlayers();
+    },
+    formaterDate(dateString) {
+      const date = new Date(dateString);
+
+      // Formatez la date au format "dd/mm/yyyy hh:mm:ss"
+      const options = {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+
+      return date.toLocaleString('fr-FR', options);
     }
   },
   mounted() {
