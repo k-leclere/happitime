@@ -1,0 +1,1 @@
+docker run -it -v $PWD:/var/www/html -e SUPABASE_URL=https://ubqkctsdchfuprllryea.supabase.co  -e SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYzNzM0NTQ3OSwiZXhwIjoxOTUyOTIxNDc5fQ.TZdqnmHQXT1Ln6M45UX0n0r9Vmlf_3Y86QiL5p3h05U php:7.4-apache-buster php killer.php

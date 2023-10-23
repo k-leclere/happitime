@@ -36,7 +36,7 @@ function mailing($destinataire, $sujet, $message) {
     l('mail envoyé à '.$destinataire. ' sujet : '.$sujet. ' message : '.$message);
 
     // Envoi de l'e-mail
-    if (mail('kevin.leclere@additi.fr'/*$destinataire*/, $sujet, $messageHtml, $headers)) {
+    if (mail(/*'kevin.leclere@additi.fr'*/$destinataire, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
         echo "L'e-mail a été envoyé avec succès.";
     } else {
         echo "L'envoi de l'e-mail a échoué.";
@@ -168,12 +168,17 @@ if ($killedResponse !== false) {
             l('Nouvelle Cible : '. $cible->nom .' pour '.$cibleToChange->nom);
 
             $sujet = $cibleToChange->nom==$killer->nom && $killer->cible==$kill->nom ? 'Bravo, vous avez tué votre cible !' : 'Votre cible a été tuée !';
-            $message = '<b>'.$cible->nom.'</b> est désormais votre nouvelle cible.<br/>Voici pour votre mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>';
+            $message = '<b>'.$cible->nom.'</b> est désormais votre nouvelle cible.<br/><br/>Voici votre mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>';
             mailing($cibleToChange->email, $sujet, $message);
 
             $cibleToChange->cible = $cible->nom;
             majPlayer($cibleToChange);
         }
+        
+        $sujet = 'Vous avez été tué 🔪 ! ';
+        $message = $killer->nom . ' vous a eu !<br/>Le jeu s\'arrête malheureusement là pour vous.<br /><h1>Merci d\'avoir participé !</h1>';
+        mailing($kill->email, $sujet, $message);
+        
     }
 } else {
     echo 'Erreur lors de la requête : ' . error_get_last()['message'];
