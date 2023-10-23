@@ -91,7 +91,7 @@ export default {
     },
     async confirmKill(player) {
       this.potentialKillers = this.players.filter(
-        (p) => p.cible === player.nom || p.nom === player.cible
+        (p) => (p.cible === player.nom && !p.killed_at) || p.nom === player.cible
       );
       this.currentPlayer = player;
       this.showModal = true;
@@ -152,7 +152,7 @@ export default {
       return this.tabPlayers;
     },
     playersDispo() {
-      return this.tabPlayers.filter(player => !this.playerTargeted.includes(player.nom));
+      return this.tabPlayers.filter(player => (!this.playerTargeted.includes(player.nom) && !player.killed_at));
     },
     playerTargeted() {
       return this.tabPlayers.reduce((acc, objet) => {
