@@ -26,6 +26,8 @@
             <input v-model="player.mission" @input="edite(player)" />
           </td>
           <td v-if="!player.killed_at">
+            🎯 {{ player.cible }}<br/>
+            📜 {{ getMission(player.cible) }}
             <select v-model="player.cible" @input="edite(player)">
               <option v-for="p in [...playersDispo, { nom: player.cible }]" :key="p.id" :value="p.nom"
                 v-if="p.nom !== player.nom">
@@ -98,6 +100,12 @@ export default {
       );
       this.currentPlayer = player;
       this.showModal = true;
+    },
+    getMission(nom) {
+      const player = this.players.find(
+        (p) => p.nom === nom
+      );
+      return player ? player.mission : '';
     },
     async executeKill() {
       if (this.selectedKiller) {
