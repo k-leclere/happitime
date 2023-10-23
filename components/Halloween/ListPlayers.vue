@@ -3,12 +3,12 @@
     <table>
       <thead>
         <tr>
-          <th>Nom</th>
-          <th>Compteur</th>
-          <th>Email</th>
+          <th width="200">Nom</th>
+          <th width="10">Compteur</th>
+          <th width="200">Email</th>
           <th>Mission</th>
-          <th>Cible</th>
-          <th>Action</th>
+          <th width="300">Cible</th>
+          <th width="50">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -25,7 +25,7 @@
           <td>
             <input v-model="player.mission" @input="edite(player)" />
           </td>
-          <td>
+          <td v-if="!player.killed_at">
             <select v-model="player.cible" @input="edite(player)">
               <option v-for="p in [...playersDispo, { nom: player.cible }]" 
                 :key="p.id" 
@@ -34,6 +34,9 @@
                 {{ p.nom }}
               </option>
             </select>
+          </td>
+          <td v-else>
+            Cible {{ player.cible }}<br/>Tué par {{ player.killed_by }}
           </td>
           <td>
             <template v-if="!player.killed_at">
@@ -147,6 +150,14 @@ export default {
       this.loadPlayers();
     }
   },
+  mounted() {
+    this.intervalId = setInterval(() => {
+      this.loadPlayers();
+    }, 300000); // 5 minutes en millisecondes
+  },
+  beforeDestroy() {
+    clearInterval(this.intervalId); // Assurez-vous de nettoyer la minuterie lorsque le composant est détruit
+  },
   computed: {
     players() {
       return this.tabPlayers;
@@ -163,6 +174,7 @@ export default {
   },
   data() {
     return {
+      intervalId: null,
       tabPlayers: [],
       showModal: false,
       selectedKiller: null,
