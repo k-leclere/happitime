@@ -36,7 +36,7 @@
             </select>
           </td>
           <td v-else>
-            Cible {{ player.cible }}<br/>Tué par {{ player.killed_by }}
+            🎯 {{ player.cible }}<br/>🔪 {{ player.killed_by }}
           </td>
           <td>
             <template v-if="!player.killed_at">
