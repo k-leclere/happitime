@@ -36,7 +36,8 @@ function mailing($destinataire, $sujet, $message) {
     l('mail envoyé à '.$destinataire. ' sujet : '.$sujet. ' message : '.$message);
 
     // Envoi de l'e-mail
-    if (mail(/*'kevin.leclere@additi.fr'*/$destinataire, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
+    if (mail($destinataire, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
+    // if (mail('kevin.leclere@additi.fr', 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
         echo "L'e-mail a été envoyé avec succès.";
     } else {
         echo "L'envoi de l'e-mail a échoué.";
@@ -69,7 +70,7 @@ function majPlayer($player) {
         echo 'Erreur cURL : ' . curl_error($ch);
     } else {
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        if ($httpCode === 200) {
+        if ($httpCode === 200 || $httpCode === 204) {
             echo 'Ligne mise à jour avec succès.';
         } else {
             echo 'Erreur lors de la mise à jour de la ligne. Code HTTP : ' . $httpCode;
@@ -133,13 +134,18 @@ if ($killedResponse !== false) {
 
         l('Nouveau tué: '.$kill->nom);
 
-        $newCibleFor = array_filter($all, function($value) use($kill, $ciblesDispo) {
+        $newCibleFor = array_filter($allDispo, function($value) use($kill, $ciblesDispo) {
             return $value->cible === $kill->nom;
         });
 
         $killer = array_filter($all, function($value) use($kill) {
             return $value->nom === $kill->killed_by;
         });
+
+        $cibleOfKill = array_filter($all, function($value) use($kill) {
+            return $value->nom === $kill->cible;
+        });
+
         
         if($killer) {
             $killer = current($killer);
@@ -147,6 +153,17 @@ if ($killedResponse !== false) {
         }
         else {
             l('ERREUR KILLER NON TROUVE');
+            continue;
+        }
+
+        
+        if($cibleOfKill) {
+            $cibleOfKill = current($cibleOfKill);
+            l('cible Of Kill -> '.$cibleOfKill->nom);
+        }
+        else {
+            l('ERREUR CIBLE NON TROUVE');
+            continue;
         }
 
 
@@ -158,14 +175,39 @@ if ($killedResponse !== false) {
 
         foreach($newCibleFor as $cibleToChange) {
 
-            if(!empty($ciblesDispo)) {
-                $cible = array_shift($ciblesDispo);
+            l('Nouvelle cible pour '. $cibleToChange->nom);
+
+            if($cibleToChange->nom != $cibleOfKill->nom) {
+                l('Attribution Cible of kill '.$cibleOfKill->nom);
+                $cible = $cibleOfKill;
+            }
+            else if(!empty($ciblesDispo)) {
+                foreach($ciblesDispo as $key => $cibleDispo) {
+                    l('Attribution Cible dispo '.$ciblesDispo[$key]->nom);
+                    if($cibleToChange->nom != $ciblesDispo[$key]->nom) {
+                        $cible = $ciblesDispo[$key];
+                        unset($ciblesDispo[$key]);
+                    }
+                }
             }
             else {
-                $cible = $allDispo[array_rand($allDispo)];
-            }
 
-            l('Nouvelle Cible : '. $cible->nom .' pour '.$cibleToChange->nom);
+                $ok = false;
+                $cpt = 0;
+                while(!$ok) {
+                    $key = array_rand($allDispo);
+                    l('Attribution Cible aleatoire '.$allDispo[$key]->nom);
+                    if($cibleToChange->nom != $allDispo[$key]->nom) {
+                        $cible = $allDispo[$key];
+                        $ok = true;
+                    }
+                    if($cpt>100) {
+                        l('JE NE RETROUVE PERSONNE, UN GAGNANT ?');
+                        die();
+                    }
+                    $cpt++;
+                }
+            }
 
             $sujet = $cibleToChange->nom==$killer->nom && $killer->cible==$kill->nom ? 'Bravo, vous avez tué votre cible !' : 'Votre cible a été tuée !';
             $message = '<b>'.$cible->nom.'</b> est désormais votre nouvelle cible.<br/><br/>Voici votre mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>';
