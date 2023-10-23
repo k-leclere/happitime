@@ -223,6 +223,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+input {
+  width: 100%;
+}
+
 /* Style de la modal de confirmation */
 .modal {
   display: none;
