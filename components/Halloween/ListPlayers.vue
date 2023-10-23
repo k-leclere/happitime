@@ -229,7 +229,11 @@ td {
 }
 
 .killed {
-  background: #900000;
+  background: #AAA;
+}
+.killed input {
+  background: #AAA;
+  border: none;
 }
 
 /* Style des boutons d'édition et de confirmation de meurtre */
