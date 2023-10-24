@@ -39,10 +39,11 @@ function mailing($destinataire, $sujet, $message)
 
     // Envoi de l'e-mail
     if (mail($destinataire, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
-        // if (mail('kevin.leclere@additi.fr', 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
-        echo "L'e-mail a été envoyé avec succès.";
+    //if (mail('kevin.leclere@additi.fr', 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
+        l("L'e-mail a été envoyé avec succès.");
+        die();
     } else {
-        echo "L'envoi de l'e-mail a échoué.";
+        l("L'envoi de l'e-mail a échoué.");
     }
 }
 
@@ -70,13 +71,13 @@ function majPlayer($player)
 
     // Gérez la réponse
     if ($response === false) {
-        echo 'Erreur cURL : ' . curl_error($ch);
+        l('Erreur cURL : ' . curl_error($ch));
     } else {
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         if ($httpCode === 200 || $httpCode === 204) {
-            echo 'Ligne mise à jour avec succès.';
+            l('Ligne mise à jour avec succès.');
         } else {
-            echo 'Erreur lors de la mise à jour de la ligne. Code HTTP : ' . $httpCode;
+            l('Erreur lors de la mise à jour de la ligne. Code HTTP : ' . $httpCode);
         }
     }
 
