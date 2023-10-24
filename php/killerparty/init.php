@@ -1,48 +1,5 @@
 <?php
-
-// Remplacez ces valeurs par les vôtres depuis le tableau de bord Supabase
-$supabaseUrl = getenv('SUPABASE_URL');
-$supabaseApiKey = getenv('SUPABASE_KEY');
-
-// Créez une URL pour la requête
-$tableName = 'killerparty';
-
-date_default_timezone_set('UTC');
-
-function l($message) {
-    echo $message.PHP_EOL;
-}
-
-function mailing($destinataire, $sujet, $message) {
-    $expediteur = "happitime@additi.fr"; // Adresse e-mail de l'expéditeur
-
-    // En-têtes de l'e-mail
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-    $headers .= "From: $expediteur\r\n";
-    $headers .= "Reply-To: $expediteur\r\n";
-
-    $messageHtml = file_get_contents(__DIR__.'/template.html');
-
-    $messageHtml = str_replace('!!TITRE!!', $sujet, $messageHtml);
-    $messageHtml = str_replace('!!MESSAGE!!', $message, $messageHtml);
-
-    $smtpConfig = [
-        'host' => '127.0.0.1', // Adresse du serveur SMTP
-        'port' => 587, // Port SMTP (587 est généralement utilisé pour le chiffrement TLS)
-        'secure' => 'tls', // Vous pouvez utiliser 'ssl' au lieu de 'tls' si votre serveur SMTP le requiert
-    ];
-
-    l('mail envoyé à '.$destinataire. ' sujet : '.$sujet. ' message : '.$message);
-
-    // Envoi de l'e-mail
-    if (mail('kevin.leclere@additi.fr'/*$destinataire*/, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
-        echo "L'e-mail a été envoyé avec succès.";
-    } else {
-        echo "L'envoi de l'e-mail a échoué.";
-    }
-}
-
+include(__DIR__ . '/common.php');
 
 $selectQuery = '*';
 $allRequestUrl = $supabaseUrl . '/rest/v1/' . $tableName . 
