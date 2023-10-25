@@ -19,7 +19,6 @@ $context = stream_context_create($options);
 // Effectuez la requête HTTP GET
 $allResponse = file_get_contents($allRequestUrl, false, $context);
 
-
 // Vérifiez si la requête a réussi
 if ($allResponse !== false) {
     $all = json_decode($allResponse);
@@ -36,13 +35,12 @@ if ($allResponse !== false) {
 
         l('Mail '.$player->nom);
 
-        $sujet = 'Plus que 24h pour réussir votre mission ! ';
+        $sujet = 'Plus que 24h pour réussir cette mission ! ';
         $message = '<b>'.$cible->nom.'</b> est toujours votre cible.<br/><br/>Voici la mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>
         <div class="content">
-          Si vous ne réussissez pas a tuer votre cible dans les 24H, votre mission va évoluer.<br/>
-          Vous recevrez un nouveau mail demain matin vous indiquant la nouvelle mission a réaliser.
+          Si vous ne réussissez pas à tuer votre cible dans les 24H, votre mission va évoluer.<br/>
+          Vous recevrez un nouveau mail demain matin vous indiquant la nouvelle mission à réaliser.
         </div>';
-        mailing($player->email, $sujet, $message);
     }
 } else {
     echo 'Erreur lors de la requête : ' . error_get_last()['message'];

@@ -41,7 +41,6 @@ function mailing($destinataire, $sujet, $message)
     if (mail($destinataire, 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
     //if (mail('kevin.leclere@additi.fr', 'KillerParty 🎃 - ' . $sujet, $messageHtml, $headers)) {
         l("L'e-mail a été envoyé avec succès.");
-        die();
     } else {
         l("L'envoi de l'e-mail a échoué.");
     }

@@ -186,7 +186,7 @@ export default {
       return this.tabPlayers;
     },
     playersDispo() {
-      return this.tabPlayers.filter(player => (!this.playerTargeted.includes(player.nom) && !player.killed_at));
+      return this.tabPlayers.filter(player => !player.killed_by);
     },
     playerTargeted() {
       return this.tabPlayers.reduce((acc, objet) => {
