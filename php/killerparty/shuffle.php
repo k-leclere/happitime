@@ -43,7 +43,7 @@ if ($allResponse !== false) {
                 $ok = true;
             }
         }
-        // majPlayer($player);
+        majPlayer($player);
     }
     
     
@@ -56,8 +56,8 @@ if ($allResponse !== false) {
 
         l('Mail '.$player->nom. ' - Cible : '. $cible->nom . ' Mission : ' . $cible->mission);
 
-        $sujet = 'Venez découvrir votre nouvelle mission ! ';
-        $message = '<b>'.$cible->nom.'</b> est votre cible.<br/><br/>Voici la mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>';
+        $sujet = 'Une nouvelle mission vous a été attribué ! ';
+        $message = 'On annule votre précédente mission ! <br/><br/><b>'.$cible->nom.'</b> est votre cible.<br/><br/>Voici la mission pour l\'éliminer : <br/><b>'.$cible->mission.'</b>';
         // mailing($player->email, $sujet, $message);
     }
 } else {

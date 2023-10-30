@@ -32,7 +32,14 @@
         </div>
       </section>
       <section>
-        <label>Pouvez-vous apporter une console (PS5, switch) ?</label>
+        <label>Souhaitez-vous être game master ?</label>
+        <div class="radio">
+          <input type="radio" v-model="master" name="master" value="1" />Oui
+          <input type="radio" v-model="master" name="master" value="0" />Non
+        </div>
+      </section>
+      <section>
+        <label>Pouvez-vous apporter une console et des jeux (PS5, switch) ?</label>
         <div class="radio">
           <input type="radio" v-model="pret" name="pret" value="1" />Oui
           <input type="radio" v-model="pret" name="pret" value="0" />Non
@@ -61,7 +68,7 @@ export default {
           const { data, error } = await this.$supabase
             .from('e-games')
             .insert([
-              { nom: this.nom, prenom: this.prenom, tournoi: this.tournoi, pret: this.pret },
+              { nom: this.nom, prenom: this.prenom, tournoi: this.tournoi, master: this.master, pret: this.pret },
             ]);
           
           if(!error) {
