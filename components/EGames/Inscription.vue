@@ -50,7 +50,7 @@
 
     </form>
     <div v-else>
-      Votre inscription a bien été prise en compte. Rendez-vous le jeudi 9 novembre prochain !<br/>
+      Votre inscription a bien été prise en compte. Rendez-vous le jeudi 16 novembre prochain !<br/>
     </div>
   </div>
 </template>
