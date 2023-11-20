@@ -15,24 +15,22 @@
             </p>
  ​           <p>
                     Règles du jeu : ​<br/>
-                1 – Inscription ci-dessous jusqu'au <b>mercredi 30 novembre 2022</b>​<br/>
-                2 – Le <b>1er décembre 2022</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
+                1 – Inscription ci-dessous jusqu'au <b>jeudi 30 novembre 2023</b>​<br/>
+                2 – Le <b>1er décembre 2023</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
                 3 - Trouvez <b>LE</b> cadeau personnalisé (budget maximum : 10€) <br/>
-                4 – Déposez vos cadeaux dans la hotte du père Noël les <b>14 et 15 décembre 2022</b><br/>
-                5 – Rendez-vous le <b>vendredi 16 décembre à 10h00</b> pour l'ouverture des cadeaux<br/>
+                4 – Déposez vos cadeaux dans la hotte du père Noël à partir du <b>18 décembre 2023</b><br/>
+                5 – Rendez-vous le <b>jeudi 21 décembre</b> pour l'ouverture des cadeaux<br/>
             </p>
             <em>
                 *Que vous soyez au siège ou en agence, vous êtes tous conviés.<br/>
-                **Tirage au sort organisé par agence ou en BU voisines au siège Rennais.<br/> 
-                Vous pourrez offrir un cadeau à un collègue de votre BU ou à un collègue de la BU juste à côté
             </em>
-            <p>
+            <!-- <p>
                 <br/><br/>
                 <b>Les inscriptions sont désormais closes. Rendez-vous l'année prochaine ;-)</b>
-            </p>
+            </p> -->
         </div>
 
-        <!-- <Inscription /> -->
+        <Inscription />
     </div>
 </template>
 

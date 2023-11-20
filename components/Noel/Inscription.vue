@@ -132,6 +132,17 @@
         <option>VITRE</option>
       </select>
       </section>
+      <section>
+        <label>Vous souhaitez offrir le cadeau d'une personne ?</label>
+        <div class="radio">
+          <input type="radio" v-model="proximite" name="proximite" value="1" />A proximité
+          <input type="radio" v-model="proximite" name="proximite" value="0" />Parmis toutes les BU
+        </div>
+      </section>
+      <section>
+        <label>Donnez votre liste au père noël</label>
+        <textarea v-model="liste" name="liste" />
+      </section>
       <input type="submit" value="S'inscrire"/>
     <h3 v-if="compteur>0">Déjà {{compteur}} inscrits.</h3>
 
@@ -153,7 +164,7 @@ export default {
         const { data, error } = await this.$supabase
           .from('noel')
           .insert([
-            { agence: this.agence, service: this.service, nom: this.nom, prenom: this.prenom },
+            { agence: this.agence, service: this.service, nom: this.nom, prenom: this.prenom, proximite: this.proximite, liste: this.liste },
           ]);
         
         if(!error) {
@@ -171,6 +182,8 @@ export default {
             prenom: '',
             service: '',
             agence: '',
+            proximite: '',
+            liste: '',
             compteur: 0,
         };
     },
@@ -215,5 +228,18 @@ input[type=submit] {
   border-radius: 3px;
   transition: all .4s;
   width: 120px;
+}
+.radio > * {
+  display: inline-block;
+  width: 30px;
+}
+section {
+  padding: 10px 0;
+}
+textarea {
+  display: block;
+  margin: 0 auto;
+  width: 320px;
+  height: 150px;
 }
 </style>
