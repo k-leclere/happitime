@@ -136,7 +136,7 @@
         <label>Vous souhaitez offrir le cadeau d'une personne ?</label>
         <div class="radio">
           <input type="radio" v-model="proximite" name="proximite" value="1" />A proximité
-          <input type="radio" v-model="proximite" name="proximite" value="0" />Parmis toutes les BU
+          <input type="radio" v-model="proximite" name="proximite" value="0" />Parmi toutes les BU
         </div>
       </section>
       <section>

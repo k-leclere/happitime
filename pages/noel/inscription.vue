@@ -16,7 +16,7 @@
  ​           <p>
                     Règles du jeu : ​<br/>
                 1 – Inscription ci-dessous jusqu'au <b>jeudi 30 novembre 2023</b>​<br/>
-                2 – Le <b>1er décembre 2023</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau (tirage au sort**)<br/>
+                2 – Le <b>1er décembre 2023</b>, découvrez le nom du collègue à qui vous allez offrir un cadeau <br/>
                 3 - Trouvez <b>LE</b> cadeau personnalisé (budget maximum : 10€) <br/>
                 4 – Déposez vos cadeaux dans la hotte du père Noël à partir du <b>18 décembre 2023</b><br/>
                 5 – Rendez-vous le <b>jeudi 21 décembre</b> pour l'ouverture des cadeaux<br/>
