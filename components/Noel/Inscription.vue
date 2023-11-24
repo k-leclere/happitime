@@ -140,7 +140,7 @@
         </div>
       </section>
       <section>
-        <label>Donnez votre liste au père noël</label>
+        <label>Donnez votre liste au père noël<br/>(une chose que vous aimeriez avoir...)</label>
         <textarea v-model="liste" name="liste" />
       </section>
       <input type="submit" value="S'inscrire"/>
