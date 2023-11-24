@@ -189,7 +189,7 @@ export default {
     },
     async mounted() {
       const { data } = await this.$supabase
-        .rpc('nb_inscrits');
+        .rpc('nb_inscrits_noel');
 
         if(data) {
           this.compteur = data;
