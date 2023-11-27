@@ -19,7 +19,7 @@
       />
       </section>
       <h3>Film de noël</h3>
-      <h5>(une sélection de film vous sera proposée utltérieurement)</h5>
+      <h5>(une sélection de film vous sera proposée ultérieurement)</h5>
       <section>
         <label>lundi 18 décembre (18h30-20h)</label>
         <div class="radio">
