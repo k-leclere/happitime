@@ -18,7 +18,7 @@
         required
       />
       </section>
-      <h3>Film de noël</h3>
+      <h3>Film de noël 🎥</h3>
       <h5>(une sélection de film vous sera proposée ultérieurement)</h5>
       <section>
         <label>lundi 18 décembre (18h30-20h)</label>
@@ -27,7 +27,7 @@
           <input type="radio" v-model="film" name="film" value="0" />Non
         </div>
       </section>
-      <h3>Ateliers Déco</h3>
+      <h3>Ateliers Déco 🎄</h3>
       <h5>(20 personnes max par atelier)</h5>
       <section v-if="compteur_date1<maxParticipants">
         <label>lundi 4 décembre (12h30-13h30)</label>
