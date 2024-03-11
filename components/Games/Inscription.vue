@@ -37,6 +37,16 @@
           <input type="radio" v-model="master" name="master" value="0" />Non
         </div>
       </section>
+      <section>
+      <label>Quel style de jeux préférez-vous ? <span>*</span></label>
+      <select v-model="style" required>
+        <option>Tous types de jeux</option>
+        <option>Jeux de plateau</option>
+        <option>Jeux coopératifs</option>
+        <option>Jeux d'ambiance</option>
+        <option>Jeux à deux</option>
+      </select>
+      </section>
       <input type="submit" value="S'inscrire"/>
     <h3 v-if="compteur>0">Déjà {{compteur}} inscrits.</h3>
 
@@ -60,7 +70,7 @@ export default {
           const { data, error } = await this.$supabase
             .from('games')
             .insert([
-              { nom: this.nom, prenom: this.prenom, jeux: this.jeux, master: this.master },
+              { nom: this.nom, prenom: this.prenom, jeux: this.jeux, master: this.master, style: this.style },
             ]);
           
           if(!error) {

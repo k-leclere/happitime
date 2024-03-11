@@ -1,13 +1,15 @@
 <template>
     <div>
         <div class="entete">
-            <h1>Inscription au 2nd Additi Games</h1>
+            <h1>Inscription au 3ème Additi Games</h1>
             <p>
-                Le jeudi 28 septembre 2023, Happitime organise les 2nd Additi Games de 18h à 20h.
+                Retrouvez Happitime le jeudi 21 mars 2024 à l'accueil d'Additi de 18h à 20h. 
             </p>
             <p>
-                L'objectif est de s'amuser autour de jeux de société, 
-                plusieurs tables et game masters vous accueilleront afin de vous faire partager leur passion du jeu.
+                L'objectif est de s'amuser et de partager un moment convivial autour de jeux de société. 
+            </p>
+            <p>
+                Plusieurs tables de jeu seront mises à disposition et des games masters seront là pour vous accueillir.
             </p>
             ​<p>
                 Attention les places sont limitées à {{nbMax}} participants. 
@@ -30,7 +32,7 @@ export default {
     },
     data() {
         return {
-            nbMax: 67,
+            nbMax: 40,
         };
     },
 };
